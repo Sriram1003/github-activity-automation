@@ -1,0 +1,40 @@
+# Global Settings
+kill_switch: false
+
+# Daily Commit Agent Configuration
+daily_commit:
+  # The file where commits will be made
+  target_file: ".contributions"
+  # Min and max commits to make per run (inclusive)
+  commit_count_range:
+    min: 1
+    max: 3
+  # Pool of commit messages to choose from
+  commit_messages:
+    - "Update activity tracking"
+    - "Automated daily activity"
+    - "Refresh contributions"
+    - "Activity sync"
+    - "Routine maintenance update"
+    - "Log daily update"
+
+# Project Creator Agent Configuration
+project_creator:
+  # How often to create a new project (in days)
+  frequency_days: 7
+  # Languages supported for scaffolding
+  supported_languages:
+    - "python"
+    - "javascript"
+  # External API for generating ideas
+  external_api:
+    provider: "huggingface"
+    model: "mistralai/Mistral-7B-Instruct-v0.2"
+    timeout_seconds: 10
+  # Fallback ideas if API fails or token is missing
+  fallback_ideas:
+    - "A simple CLI tool for managing tasks."
+    - "A lightweight web scraper for monitoring prices."
+    - "A basic API wrapper for a public service."
+    - "A utility script to format log files."
+    - "An automated notification sender."
